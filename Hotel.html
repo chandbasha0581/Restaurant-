@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+      }
+      .total-amount {
+        font-size: 24px;
+        margin: 20px;
+      }
+      #total-amount{
+        margin-left: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex flex-wrap align-center">
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1242134556/photo/meatless-biryani-made-of-jackfruit-or-kathal-a-delicacy-for-the-vegetarian.jpg?s=612x612&w=0&k=20&c=C0hYvfVGqrfqdZYOFk-nPaTq-ZX4cxX7TAyeEuFwUTY=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Biryani</h5>
+          <p class="card-text">Chicken Biryani</p>
+          <a href="#" class="btn btn-primary">299/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Biryani', 299, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1365867536/photo/fried-chicken-grilled-chicken-delicious-chicken-barbecued-chicken.jpg?s=612x612&w=0&k=20&c=-6R-DCamDopxdWEaoCMEmZE0KXRn4Il-dU7-e6HrAUA=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Tandoori chicken</h5>
+          <p class="card-text">Tandoori chicken</p>
+          <a href="#" class="btn btn-primary">289/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Tandoori chicken', 289, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1072951288/photo/indian-chilli-chicken-dry-served-in-a-plate-over-moody-background-selective-focus.jpg?s=612x612&w=0&k=20&c=WkAg8lRGsRa4XLt90XdPKIdo5qGe_SfnGzqrNi8sp9g=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chilly chicken</h5>
+          <p class="card-text">Chilly chicken</p>
+          <a href="#" class="btn btn-primary">249/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chilly chicken', 249, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1208784937/photo/dragon-chicken-chicken-strips-marinated-fried-and-saut%C3%A9ed-in-a-spicy-and-tangy-sauce.jpg?s=612x612&w=0&k=20&c=yXf-MInioItuj4ykNK_X7v7M2lpyHTfBkHTuw1JkKN8=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Dragon chicken</h5>
+          <p class="card-text">Dragon Chicken</p>
+          <a href="#" class="btn btn-primary">239/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Dragon chicken', 239, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1265209311/photo/fried-chicken-kebab-or-kabab.jpg?s=612x612&w=0&k=20&c=cq6fgpRnjpiD3ILifT3bPg2m8EnxtUvG7M8oB-9h1MY=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chicken 65</h5>
+          <p class="card-text">Chicken 65</p>
+          <a href="#" class="btn btn-primary">239/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chicken 65', 239, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1320005396/photo/chicken-tikka-kebab.jpg?s=612x612&w=0&k=20&c=CeJ-Bq-TN9B9O7x3fejz_PVXy5YYv0VLqQp6C6hNyjc=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chicken Tikka masala</h5>
+          <p class="card-text">Chicken Tikka masala</p>
+          <a href="#" class="btn btn-primary">269/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chicken Tikka masala', 269, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/900220822/photo/indian-bread-chapati-fulka-gehu-roti-with-wheat-grains-in-background-its-a-healthy-fiber-rich.jpg?s=612x612&w=0&k=20&c=m2wZmANP7JUMS3dTnfqDPk4EAFSpOCfjqgFFeWKM6h8=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Rotis</h5>
+          <p class="card-text">Rotis</p>
+          <a href="#" class="btn btn-primary">29/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Rotis', 29, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1292638493/photo/butter-naan-isolated-over-a-rustic-wooden-background-selective-focus.jpg?s=1024x1024&w=is&k=20&c=kqnAHWSn2YdN3jAn3AsCaprWbOcFHX4XFAOFRMEYkws=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Butter naan</h5>
+          <p class="card-text">Butter naan</p>
+          <a href="#" class="btn btn-primary">39/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Butter naan', 39, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/157526986/photo/roast-chicken-on-the-bbq.jpg?s=612x612&w=0&k=20&c=T40SCrxhnikibAiTVPD70zm3JJeLkUau9BwdnfEQRZk=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Grilled chicken</h5>
+          <p class="card-text">Grilled Chicken</p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Grilled chicken',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1405559666/photo/chicken-do-pyaza-an-indian-delicious-aromatic-chicken-onion-curry.jpg?s=612x612&w=0&k=20&c=CBf5Z14BODrDOwhlHuLRRGTu8UmJzUXrXrbxUT_zBtI=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chicken Curry</h5>
+          <p class="card-text">Chicken Curry</p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chicken Curry',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1415994593/photo/chicken-curry.jpg?s=612x612&w=0&k=20&c=QQsCGCC22fuuM_KpiLio-drGgVCDwUPcFcm5CJuyMxc=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mutton curry</h5>
+          <p< class="card-text">Mutton Curry</p>
+          <a href="#" class="btn btn-primary">450/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Mutton Curry',450, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1003411832/photo/creamy-shrimp-curry.jpg?s=612x612&w=0&k=20&c=ddGesjoq0GAQ8vZk0flPFZfAEIV7_V7Fgwx24EBH0rA=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Prawn curry</h5>
+          <p class="card-text">Prawn curry</p>
+          <a href="#" class="btn btn-primary">389/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Prawn curry',389, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1414307299/photo/closeup-garlic-butter-shrimp-in-pan.jpg?s=612x612&w=0&k=20&c=4J1w6K8W-bL8yJSioQVoPVGT9pipj3IcimSExRRQbm4=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Prawn grilled</h5>
+          <p class="card-text">Prawn grilled</p>
+          <a href="#" class="btn btn-primary">389/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Prawn grilled',389, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1169104260/photo/healthy-chicken-soup.jpg?s=612x612&w=0&k=20&c=JcGkYR2XbTsCyVX9x-cvlJFD8eBZfRv-aCm3TP561-8=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chiken Soup</h5>
+          <p class="card-text">Chiken Soup</p>
+          <a href="#" class="btn btn-primary">199/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chiken Soup',199, this)">Add to cart</a>
+        </div>
+      </div>
+      <div  class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1364381072/photo/shurpa-asian-soup-with-lamb-potatoes-and-carrot-on-white-bowl-on-dark-table.jpg?s=612x612&w=0&k=20&c=DGrMP6a3SEHuZJwPylgVZMYWZRV2Zr4676Ch8Zoc7dM=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mutton Soup</h5>
+          <p class="card-text">Mutton Soup</p>
+          <a href="#" class="btn btn-primary">259/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Mutton Soup',259, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/502474519/photo/homemade-grilled-barbecue-chicken.jpg?s=612x612&w=0&k=20&c=5wm-TATH7AH8n77VLfl3CY_CCGeP94TjqrsgB1rXpOg=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">BBQ chicken</h5>
+          <p class="card-text">BBQ chicken</p></p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('BBQ chicken',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1365867536/photo/fried-chicken-grilled-chicken-delicious-chicken-barbecued-chicken.jpg?s=612x612&w=0&k=20&c=-6R-DCamDopxdWEaoCMEmZE0KXRn4Il-dU7-e6HrAUA=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">thandoori chicken</h5>
+          <p class="card-text">thandoori chicken</p>
+          <a href="#" class="btn btn-primary">289/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('thandoori chicken',289, this)">Add to cart</a>
+        
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1072951288/photo/indian-chilli-chicken-dry-served-in-a-plate-over-moody-background-selective-focus.jpg?s=612x612&w=0&k=20&c=WkAg8lRGsRa4XLt90XdPKIdo5qGe_SfnGzqrNi8sp9g=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chilly chicken</h5>
+          <p class="card-text">Chilly chicken</p>
+          <a href="#" class="btn btn-primary">249/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chilly chicken',249, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1208784937/photo/dragon-chicken-chicken-strips-marinated-fried-and-saut%C3%A9ed-in-a-spicy-and-tangy-sauce.jpg?s=612x612&w=0&k=20&c=yXf-MInioItuj4ykNK_X7v7M2lpyHTfBkHTuw1JkKN8=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Dragon chicken</h5>
+          <p class="card-text">Dragon Chicken</p>
+          <a href="#" class="btn btn-primary">239/-</a>
+          <a href="#" class="btn btn-primary"  onclick="addToCart('Dragon chicken',239, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1265209311/photo/fried-chicken-kebab-or-kabab.jpg?s=612x612&w=0&k=20&c=cq6fgpRnjpiD3ILifT3bPg2m8EnxtUvG7M8oB-9h1MY=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chicken 65</h5>
+          <p class="card-text">Chicken 65</p>
+          <a href="#" class="btn btn-primary">239/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chicken 65',239, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1320005396/photo/chicken-tikka-kebab.jpg?s=612x612&w=0&k=20&c=CeJ-Bq-TN9B9O7x3fejz_PVXy5YYv0VLqQp6C6hNyjc=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Chicken Tikka  masala</h5>
+          <p class="card-text">Chicken Tikka masala</p>
+          <a href="#" class="btn btn-primary">269/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Chicken Tikka masala',269, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/490993702/photo/singapore-chili-crab.jpg?s=612x612&w=0&k=20&c=3a0sFGVb2i8pY-Zy0sgwcmBLInb8v-ac9fkBOjbHnWA=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Crab masala</h5>
+          <p class="card-text">Crab masala</p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Crab masala',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1437666416/photo/food-photography.jpg?s=612x612&w=0&k=20&c=5JIQCUhzmyc6gh55NKcFvUJvod3GRaoBMeMxbjqVBjE=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mushroom biryani</h5>
+          <p class="card-text">Mushroom biryani</p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Mushroom biryani',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1457374972/photo/beef-biryani.jpg?s=612x612&w=0&k=20&c=2hiYTDkDi8B4NIsl79kcsAZhthZw1QodvxX7n5lykJM=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Mushroom curry</h5>
+          <p class="card-text">Mushroom curry</p>
+          <a href="#" class="btn btn-primary">399/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Mushroom curry',399, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1205252640/photo/vegetable-jalfrezi-in-copper-kadai-at-black-slate-background-jalfrezi-is-indian-cuisine-dish.jpg?s=1024x1024&w=is&k=20&c=LYyUM9_Z1orIn_4brTV2glaMWZIs4-DKbbJ0nrLdpRQ=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Baby corn curry</h5>
+          <p class="card-text">Baby corn curry</p>
+          <a href="#" class="btn btn-primary">270/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('Baby corn curry',270, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/160621319/photo/paneer-makhani-soup-sitting-on-a-towel.jpg?s=612x612&w=0&k=20&c=0_CGUI3xjHH6b8-WAHJbYXbaUT8IigHY2yYwHsLnGyA=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">paneer masala</h5>
+          <p class="card-text">paneer masala</p>
+          <a href="#" class="btn btn-primary">255/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('paneer masala',255, this)">Add to cart</a>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="https://media.istockphoto.com/id/1157108710/photo/paneer-tikka-with-capsicum-and-onion-indian-and-pakistani-street-food.jpg?s=612x612&w=0&k=20&c=iXvIphKQOkiocWW-cACin10gatrVrrs7xT2ZMA5TxCM=" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">paneer Tikka</h5>
+          <p class="card-text">paneer tikka</p>
+          <a href="#" class="btn btn-primary">279/-</a>
+          <a href="#" class="btn btn-primary" onclick="addToCart('paneer tikka',279, this)">Add to cart</a>
+        </div>
+      </div>
+      
+     </div>
+     <div id="total-amount" class="total-amount">Total Amount: 0/-</div>
+  </body>
+  <script>
+     let totalAmount = 0;
+
+      function addToCart(title, price, button) {
+        button.innerText = "Added";
+        button.classList.remove("btn-primary");
+        button.classList.add("btn-success");
+        console.log(title + " added to cart. Price: " + price);
+      //document.getElementById("cart").innerText = title + " added to cart: " +Price+ " + price";
+        totalAmount += price;
+        document.getElementById("total-amount").innerText = "Total Amount: " + totalAmount + "/-";
+      }
+  </script>
+</html>
