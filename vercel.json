@@ -1,6 +1,14 @@
 {
   "version": 2,
   "builds": [
-    { "src": "Hotel.html", "use": "@vercel/static" }
+    { "src": "*.html",
+      "use": "@vercel/static"
+    }
   ]
+   "rewrites":[
+        {
+            "source": "/(.*)",
+            "destination":"/Hotel.html"
+        }
+    ]
 }
